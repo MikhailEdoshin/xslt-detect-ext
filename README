@@ -1,0 +1,83 @@
+An XSLT stylesheet tests which extensions are available in an XSLT processor.
+
+Background
+----------
+
+XSLT processors may have extension functions and elements. The most well known
+set of such extensions is the EXSLT project (http://exslt.github.io/). A 
+processor may also implement its own extension functions. One such processor
+is Apache Xalan (https://apache.github.io/xalan-c/extensionslib.html).
+
+XSLT has a way to test whether a function or an element is available:
+
+  function-available(name)
+  element-available(name)
+
+What the project does
+---------------------
+
+The project generates an XSLT file (the detector, 'detect.xslt') that tests 
+the presense of all known XSLT extension functions and elements. It includes 
+all functions and elements of EXSLT and Xalan.
+
+The reason the code generates the detector is because it is simpler and less 
+error-prone to do it this way: the source list of names is self-explanatory 
+and the transformation code is simple, except for a workaround to generate 
+namespace declarations. It is also easier to extend if such a need arises. 
+
+Since the generated detector is immediately useful it is also kept as a part 
+of the project.
+
+List of files
+-------------
+
+  Makefile               -- build recipes. Run 'make' to see help.
+  README                 -- this file
+  out\
+  |_ detect.xslt         -- the detector itself (generated)
+  sample\                -- detection samples (generated)
+  |_ chromium-brave.txt  -- a Chromium-based browser, here Brave
+  |_ firefox.txt         -- FireFox
+  |_ filemaker.txt       -- FileMaker v18, XML export.
+  |_ libxslt.txt         -- libxslt (xsltproc).
+  src\
+  |_ make.xslt           -- transforms 'names.xml' into 'out/detect.xslt'
+  |_ names.xml           -- extension names
+
+Requirements
+------------
+
+To generate the detector the project expects to find 'xsltproc'. The 
+'detect.xslt' itself can be used with any XSLT processor as it is.
+
+Usage
+-----
+
+To generate a fresh detector ('out/detect.xslt'):
+
+  make out/detect.xslt
+
+To use the detector with an XSLT processor
+
+  Apply 'detect.xslt' to any XML file. It is OK to use the detector itself. 
+  The result will be a text file that shows the system information, list 
+  extension URIs and marks each function and element with '+' (available) or
+  '-' (not available).
+  
+  For an example of using it with 'libxslt' (xsltproc) see Makefile:
+  
+    make sample/libxslt.txt
+
+To use the detector with a browser
+
+  Open the 'detect.xslt' with a browser. (Drag it there.) The internal XML
+  machinery will apply the XSLT to itself and you will see the result right
+  in the browser window.
+  
+Warning
+-------
+
+It seems that a processor may falsely report a function or element as 
+unavaiable. For example in my tests 'libxslt' ('xsltproc') shows that it does 
+not have the '<function>' element of EXSLT functions extension. Yet it 
+definitely does.

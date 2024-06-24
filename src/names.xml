@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- List of names of known XSLT extensions. Transformed with XSLT into 
+  another XSLT that would test if an extension is available and output the
+  result in some readable format. -->
+
+<names>
+
+  <group uri="http://exslt.org/common">
+    <func name="node-set" />
+    <func name="object-type" />
+    <elem name="document" />
+  </group>
+  
+  <group uri="http://exslt.org/dates-and-times">  
+    <func name="add" />
+    <func name="add-duration" />
+    <func name="date" />
+    <func name="date-time" />
+    <func name="day-abbreviation" />
+    <func name="day-in-month" />
+    <func name="day-in-week" />
+    <func name="day-in-year" />
+    <func name="day-name" />
+    <func name="day-of-week-in-month" />
+    <func name="difference" />
+    <func name="duration" />
+    <func name="format-date" />
+    <func name="hour-in-day" />
+    <func name="leap-year" />
+    <func name="minute-in-hour" />
+    <func name="month-abbreviation" />
+    <func name="month-in-year" />
+    <func name="month-name" />
+    <func name="parse-date" />
+    <func name="second-in-minute" />
+    <func name="seconds" />
+    <func name="sum" />
+    <func name="time" />
+    <func name="week-in-month" />
+    <func name="week-in-year" />
+    <func name="year" />
+    <elem name="date-format" />
+  </group>
+ 
+  <group uri="http://exslt.org/dynamic">
+    <func name="closure" />
+    <func name="evaluate" />
+    <func name="map" />
+    <func name="max" />
+    <func name="min" />
+    <func name="sum" />
+  </group>
+
+  <group uri="http://exslt.org/functions">
+    <elem name="function" />
+    <elem name="result" />
+    <elem name="script" />
+  </group>
+  
+  <group uri="http://exslt.org/math">
+    <func name="abs" />
+    <func name="acos" />
+    <func name="asin" />
+    <func name="atan" />
+    <func name="atan2" />
+    <func name="constant" />
+    <func name="cos" />
+    <func name="exp" />
+    <func name="highest" />
+    <func name="log" />
+    <func name="lowest" />
+    <func name="max" />
+    <func name="min" />
+    <func name="power" />
+    <func name="random" />
+    <func name="sin" />
+    <func name="sqrt" />
+    <func name="tan" />
+  </group>
+  
+  <group uri="http://exslt.org/random">
+    <func name="random-sequence" />
+  </group>
+  
+  <group uri="http://exslt.org/regular-expressions">
+    <func name="match" />
+    <func name="replace" />
+    <func name="test" />
+  </group>
+
+  <group uri="http://exslt.org/sets">
+    <func name="difference" />
+    <func name="distinct" />
+    <func name="has-same-node" />
+    <func name="intersection" />
+    <func name="leading" />
+    <func name="trailing" />
+  </group>
+  
+  <group uri="http://exslt.org/strings">
+    <func name="align" />
+    <func name="concat" />
+    <func name="decode-uri" />
+    <func name="encode-uri" />
+    <func name="padding" />
+    <func name="replace" />
+    <func name="split" />
+    <func name="tokenize" />
+  </group>
+
+  <group uri="http://xml.apache.org/xalan">  
+    <func name="difference" />
+    <func name="distinct" />
+    <func name="evaluate" />
+    <func name="hasSameNodes" />
+    <func name="intersection" />
+    <func name="nodeset" />
+  </group>
+
+</names>

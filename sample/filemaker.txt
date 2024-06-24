@@ -1,0 +1,95 @@
+Version: 1
+Vendor: Apache Software Foundation
+Vendor URL: http://xml.apache.org/xalan-c
+http://exslt.org/common
++ node-set()
++ object-type()
+- <document>
+http://exslt.org/dates-and-times
+- add()
+- add-duration()
+- date()
++ date-time()
+- day-abbreviation()
+- day-in-month()
+- day-in-week()
+- day-in-year()
+- day-name()
+- day-of-week-in-month()
+- difference()
+- duration()
+- format-date()
+- hour-in-day()
+- leap-year()
+- minute-in-hour()
+- month-abbreviation()
+- month-in-year()
+- month-name()
+- parse-date()
+- second-in-minute()
+- seconds()
+- sum()
+- time()
+- week-in-month()
+- week-in-year()
+- year()
+- <date-format>
+http://exslt.org/dynamic
+- closure()
++ evaluate()
+- map()
+- max()
+- min()
+- sum()
+http://exslt.org/functions
+- <function>
+- <result>
+- <script>
+http://exslt.org/math
++ abs()
++ acos()
++ asin()
++ atan()
++ atan2()
++ constant()
++ cos()
++ exp()
++ highest()
++ log()
++ lowest()
++ max()
++ min()
++ power()
++ random()
++ sin()
++ sqrt()
++ tan()
+http://exslt.org/random
+- random-sequence()
+http://exslt.org/regular-expressions
+- match()
+- replace()
+- test()
+http://exslt.org/sets
++ difference()
++ distinct()
++ has-same-node()
++ intersection()
++ leading()
++ trailing()
+http://exslt.org/strings
++ align()
++ concat()
++ decode-uri()
++ encode-uri()
++ padding()
+- replace()
+- split()
+- tokenize()
+http://xml.apache.org/xalan
++ difference()
++ distinct()
++ evaluate()
++ hasSameNodes()
++ intersection()
++ nodeset()
